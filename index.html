@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Youssef Boudar | Educator & Classroom Portfolio</title>
+  
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* Global Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #f8fafc;
+      color: #0f172a;
+      line-height: 1.6;
+      padding: 20px 16px 60px 16px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 20px 0 30px 0;
+    }
+
+    header h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+    }
+
+    /* ABOUT ME CARD */
+    .about-card {
+      display: flex;
+      align-items: center;
+      background: #ffffff;
+      padding: 32px;
+      border-radius: 24px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      margin-bottom: 40px;
+      gap: 32px;
+    }
+
+    .profile-image-wrapper {
+      position: relative;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .circle-bg {
+      position: absolute;
+      width: 170px;
+      height: 170px;
+      background: #e2e8f0;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .profile-img {
+      position: relative;
+      z-index: 2;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    .badge-label {
+      display: inline-block;
+      padding: 4px 12px;
+      background-color: #f1f5f9;
+      color: #475569;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 16px;
+      margin-bottom: 10px;
+    }
+
+    .about-text h2 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 12px;
+      line-height: 1.25;
+    }
+
+    .about-text p {
+      font-size: 15px;
+      color: #475569;
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .about-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* PROJECTS SECTION */
+    .section-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 20px;
+      padding-left: 4px;
+    }
+
+    .project-card {
+      background: #ffffff;
+      padding: 28px;
+      border-radius: 24px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      margin-bottom: 30px;
+    }
+
+    .project-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .yre-logo {
+      height: 44px;
+      width: auto;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .header-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header-info h3 {
+      font-size: 19px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .badge-gold {
+      padding: 4px 10px;
+      background-color: #fef3c7;
+      color: #92400e;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 12px;
+    }
+
+    .badge-rank {
+      padding: 4px 10px;
+      background-color: #e0f2fe;
+      color: #0369a1;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 12px;
+    }
+
+    .project-body {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    /* Responsive 16:9 Video Wrapper */
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #000000;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .project-description h4 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 10px;
+    }
+
+    .project-description p {
+      font-size: 14.5px;
+      color: #475569;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .project-description p:last-child {
+      margin-bottom: 0;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 13px;
+      color: #94a3b8;
+    }
+
+    /* MOBILE STYLES */
+    @media (max-width: 768px) {
+      body {
+        padding: 12px 12px 40px 12px;
+      }
+
+      .about-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        gap: 16px;
+      }
+
+      .circle-bg {
+        width: 120px;
+        height: 120px;
+      }
+
+      .profile-img {
+        width: 110px;
+        height: 110px;
+      }
+
+      .about-text h2 {
+        font-size: 22px;
+      }
+
+      .about-text p {
+        font-size: 14px;
+      }
+
+      .project-card {
+        padding: 16px;
+      }
+
+      .project-header {
+        gap: 12px;
+        margin-bottom: 14px;
+        padding-bottom: 12px;
+      }
+
+      .yre-logo {
+        height: 36px;
+      }
+
+      .header-info h3 {
+        font-size: 16px;
+      }
+
+      .project-body {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .project-description h4 {
+        font-size: 15px;
+      }
+
+      .project-description p {
+        font-size: 13.5px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <h1>Youssef Boudar</h1>
+    </header>
+
+    <!-- SECTION 1: ABOUT ME -->
+    <section class="about-card">
+      <div class="profile-image-wrapper">
+        <div class="circle-bg"></div>
+        <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/703896748_122096322381343939_4510345508896270415_n.jpg" alt="Youssef Boudar" class="profile-img">
+      </div>
+      <div class="about-text">
+        <span class="badge-label">English Educator</span>
+        <h2>Hello, I'm Youssef Boudar</h2>
+        <p>I am 28 years old with over 5 years of teaching experience. I hold a Bachelor's degree in English Studies and Linguistics, and I am TESOL certified.</p>
+        <p>My teaching philosophy centers on project-based learning, which I believe is the most effective way for students to build real communication skills. Below are some of the active projects and activities we run in our classroom!</p>
+      </div>
+    </section>
+
+    <!-- SECTION 2: CLASSROOM ACTIVITIES & PROJECTS -->
+    <h2 class="section-title">Classroom Activities & Projects</h2>
+
+    <!-- Project Card 1: YRE Food Waste Documentary -->
+    <article class="project-card">
+      <div class="project-header">
+        <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/YRE%2Blogo.webp" alt="YRE Logo" class="yre-logo">
+        <div class="header-info">
+          <h3>Young Reporters for the Environment (YRE)</h3>
+          <div class="badges">
+            <span class="badge-gold">1st Place - Video Editing (Local)</span>
+            <span class="badge-rank">4th Place Overall (Local)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-body">
+        <div class="video-wrapper">
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/nrD1udLDqYo" 
+            title="Food Waste in Morocco: A Hidden Environmental Problem" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="project-description">
+          <h4>Food Waste Investigation</h4>
+          <p>I am passionate about filmmaking and video editing, so I brought in my own camera gear and equipment to film and edit this project alongside my middle school students.</p>
+          <p>We started by investigating our school canteen. To see if it was a broader issue, we expanded our research across Morocco and interviewed an environmental researcher at Ibn Tofail University. Our work won 1st place locally for video editing and 4th place overall.</p>
+        </div>
+      </div>
+    </article>
+
+    <footer>
+      <p>&copy; 2026 Youssef Boudar | English Teacher & Educator</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
