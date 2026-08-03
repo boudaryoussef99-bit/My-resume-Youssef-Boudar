@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Classroom Portfolio | Educator Highlights</title>
+  <title>My Teaching Portfolio</title>
   
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +23,7 @@
       background-color: #f8fafc;
       color: #0f172a;
       line-height: 1.6;
-      padding: 20px 16px 60px 16px;
+      padding: 0 16px 60px 16px;
     }
 
     .container {
@@ -31,17 +31,59 @@
       margin: 0 auto;
     }
 
-    /* Top Header */
-    header {
+    /* Bolder Formal Academic Header */
+    .siteHeader {
       text-align: center;
-      padding: 20px 0 30px 0;
+      padding: 40px 0 20px 0;
     }
 
-    header h1 {
-      font-size: 24px;
+    .siteHeader h1 {
+      font-size: 38px;
       font-weight: 800;
       color: #0f172a;
-      letter-spacing: -0.5px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    /* AUTHENTIC STICKY NAVIGATION MENU */
+    .navMenu {
+      position: sticky;
+      top: 0;
+      background-color: rgba(248, 250, 252, 0.95);
+      backdrop-filter: blur(8px);
+      padding: 16px 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .navBtn {
+      padding: 10px 20px;
+      background: #ffffff;
+      color: #334155;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+
+    .navBtn:hover {
+      background: #0f172a;
+      color: #ffffff;
+      border-color: #0f172a;
     }
 
     /* ABOUT ME CARD */
@@ -118,14 +160,6 @@
     }
 
     /* PROJECTS SECTION */
-    .sectionTitle {
-      font-size: 22px;
-      font-weight: 800;
-      color: #0f172a;
-      margin-bottom: 20px;
-      padding-left: 4px;
-    }
-
     .projectCard {
       background: #ffffff;
       padding: 28px;
@@ -286,7 +320,40 @@
     /* MOBILE STYLES */
     @media (max-width: 768px) {
       body {
-        padding: 12px 12px 40px 12px;
+        padding: 0 12px 40px 12px;
+      }
+
+      .siteHeader {
+        padding: 24px 0 10px 0;
+      }
+
+      .siteHeader h1 {
+        font-size: 26px;
+        letter-spacing: 1px;
+      }
+      
+      /* FORCES ALL 3 NAV BUTTONS ON ONE SINGLE LINE & FULLY VISIBLE ON MOBILE */
+      .navMenu {
+        position: sticky;
+        top: 0;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 6px;
+        padding: 10px 4px 14px 4px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #e2e8f0;
+      }
+      
+      .navBtn {
+        flex: 1;
+        padding: 8px 4px;
+        font-size: 11px;
+        font-weight: 600;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       .aboutCard {
@@ -355,10 +422,17 @@
 <body>
 
   <div class="container">
-    <!-- Top Header -->
-    <header>
-      <h1>Classroom Highlights and Portfolio</h1>
+    <!-- Formal Academic Header -->
+    <header class="siteHeader">
+      <h1>My Teaching Portfolio</h1>
     </header>
+
+    <!-- NAVIGATION MENU (All buttons fit on one line on mobile) -->
+    <nav class="navMenu">
+      <a href="index.html" class="navBtn">Classroom Projects</a>
+      <a href="school-moments.html" class="navBtn">School Moments</a>
+      <a href="resume.html" class="navBtn">My Resume</a>
+    </nav>
 
     <!-- SECTION 1: ABOUT ME -->
     <section class="aboutCard">
@@ -373,9 +447,6 @@
         <p>My teaching philosophy centers on project based learning, which I believe is the most effective way for students to build real communication skills. Below are some of the active projects and activities we run in our classroom!</p>
       </div>
     </section>
-
-    <!-- SECTION 2: CLASSROOM ACTIVITIES & PROJECTS -->
-    <h2 class="sectionTitle">Classroom Activities and Projects</h2>
 
     <!-- Project Card 1: YRE Food Waste Documentary -->
     <article class="projectCard">
@@ -590,6 +661,130 @@
           <h4>Neighbourhood Map and Speaking Activity</h4>
           <p>After finishing our classroom module about houses around the world, my primary students and I created a hands on map building project. The students worked together to create a map of their own neighbourhood and then presented their work on video.</p>
           <p>The results of this activity were fantastic. At the end of the project, I found that 80 percent of the students were able to confidently talk about different types of houses around the world and describe their own neighbourhood in English.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project Card 8: Amazigh Day Celebration -->
+    <article class="projectCard">
+      <div class="projectHeader">
+        <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/703896748_122096322381343939_4510345508896270415_n.jpg" alt="Profile Icon" class="schoolNewsLogo">
+        <div class="headerInfo">
+          <h3>Amazigh Day Celebration in Morocco</h3>
+          <div class="badges">
+            <span class="badgePurple">Cultural Heritage</span>
+            <span class="badgeGreen">Student Expression</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="projectBody">
+        <div class="videoWrapper">
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/RJ2Lkusizyc" 
+            title="Amazigh Day at School: Learning, Sharing, and Celebrating Our Roots" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="projectDescription">
+          <h4>Celebrating Cultural Identity and Heritage</h4>
+          <p>As part of a special school event, both my middle school and primary school students came together to celebrate Amazigh Day in Morocco. In this short reel video, students share their thoughts, history, and traditions, expressing their personal pride in their cultural roots.</p>
+          <p>It was a wonderful opportunity for the students to speak on camera, share positive opinions, and celebrate unity together. The event brought everyone closer, creating a joyful space for students to talk and honor their heritage with respect and enthusiasm.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project Card 9: School Trip English Immersion -->
+    <article class="projectCard">
+      <div class="projectHeader">
+        <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/703896748_122096322381343939_4510345508896270415_n.jpg" alt="Profile Icon" class="schoolNewsLogo">
+        <div class="headerInfo">
+          <h3>School Trip English Immersion</h3>
+          <div class="badges">
+            <span class="badgeGreen">English Immersion</span>
+            <span class="badgeBlue">Real World Practice</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="projectBody">
+        <div class="videoWrapper">
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/7eZKVrrMkKo" 
+            title="Unforgettable School Trip Moments" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="projectDescription">
+          <h4>Practicing English Outside the Classroom</h4>
+          <p>On our school trips, the primary aim is to give students a real world environment to practice English. As their teacher, I make it a point to communicate entirely in English during our trips.</p>
+          <p>Even though students sometimes attempt to speak in the local language or Arabic, I always respond in English. They understand completely without any confusion, which encourages them to listen actively and build confidence speaking English.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project Card 10: Robotics and AI Formation Workshop -->
+    <article class="projectCard">
+      <div class="projectHeader">
+        <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/703896748_122096322381343939_4510345508896270415_n.jpg" alt="Profile Icon" class="schoolNewsLogo">
+        <div class="headerInfo">
+          <h3>Robotics and AI Formation Workshop</h3>
+          <div class="badges">
+            <span class="badgeGold">Ministry of Education</span>
+            <span class="badgePurple">Casablanca Barnousi</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="projectBody">
+        <div class="videoWrapper">
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/9uG7_3GoUBc" 
+            title="Robotics Workshop Learning the Basics of Robotics" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="projectDescription">
+          <h4>Guiding Students in AI and Robotics</h4>
+          <p>I accompanied and guided our students during an official robotics and artificial intelligence formation workshop organized by the Ministry of Education in Casablanca Barnousi.</p>
+          <p>Throughout the trip, I helped students understand complex robotics concepts, encouraged them to ask active questions, and supported their full participation in hands on building and programming activities.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project Card 11: Job Day and Guest Pilot Visit -->
+    <article class="projectCard">
+      <div class="projectHeader">
+        <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/703896748_122096322381343939_4510345508896270415_n.jpg" alt="Profile Icon" class="schoolNewsLogo">
+        <div class="headerInfo">
+          <h3>Job Day and Guest Pilot Visit</h3>
+          <div class="badges">
+            <span class="badgeBlue">Job Day Inspiration</span>
+            <span class="badgeGreen">Special Guest Pilot</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="projectBody">
+        <div class="videoWrapper">
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/VHXn0l3rGjk" 
+            title="Students Meet a Pilot" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="projectDescription">
+          <h4>Motivating Students Through Career Inspiration</h4>
+          <p>For our special Job Day event, I invited different professionals to visit our class to motivate students, encourage them to study hard, and inspire them about their future careers.</p>
+          <p>One of our special guest speakers was Badr, an airline pilot flying Airbus aircraft. He shared his aviation journey, answered questions from the students, and showed them that big dreams are achievable through hard work and dedication.</p>
         </div>
       </div>
     </article>

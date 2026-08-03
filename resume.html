@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Resume - Youssef Boudar</title>
+  
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* Global Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f8fafc;
+      color: #0f172a;
+      line-height: 1.6;
+      padding: 0 16px 60px 16px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Site Header */
+    .siteHeader {
+      text-align: center;
+      padding: 30px 0 15px 0;
+    }
+
+    .siteHeader h1 {
+      font-size: 32px;
+      font-weight: 800;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Unified Navigation Menu */
+    .navMenu {
+      position: sticky;
+      top: 0;
+      background-color: rgba(248, 250, 252, 0.95);
+      backdrop-filter: blur(8px);
+      padding: 12px 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 30px; /* Increased margin since button is moved */
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .navBtn {
+      padding: 8px 16px;
+      background: #ffffff;
+      color: #334155;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 13.5px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    }
+
+    .navBtn:hover, .navBtn.active {
+      background: #0f172a;
+      color: #ffffff;
+      border-color: #0f172a;
+    }
+
+    /* Download CV Button Section */
+    .downloadContainer {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .downloadCvBtn {
+      background: #0284c7;
+      color: #ffffff;
+      padding: 10px 24px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.2);
+      transition: all 0.2s ease;
+    }
+
+    .downloadCvBtn:hover {
+      background: #0369a1;
+      transform: translateY(-1px);
+    }
+
+    /* Resume Card Layout */
+    .resumeCard {
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 24px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      margin-bottom: 30px;
+    }
+
+    .resumeHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid #f1f5f9;
+      padding-bottom: 24px;
+      margin-bottom: 30px;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .resumeTitleInfo h2 {
+      font-size: 28px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+
+    .resumeTitleInfo p {
+      font-size: 14.5px;
+      color: #475569;
+      margin-bottom: 4px;
+    }
+
+    .contactDetails {
+      font-size: 14px;
+      color: #334155;
+      background: #f8fafc;
+      padding: 16px;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .contactDetails p {
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .contactDetails p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Action Buttons (WhatsApp & Gmail) */
+    .actionBtn {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .actionBtn:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    .whatsappBtn {
+      background-color: #25d366;
+      color: #ffffff;
+    }
+
+    .gmailBtn {
+      background-color: #ea4335;
+      color: #ffffff;
+    }
+
+    /* Resume Sections */
+    .resumeSection {
+      margin-bottom: 35px;
+    }
+
+    .resumeSection:last-child {
+      margin-bottom: 0;
+    }
+
+    .resumeSection h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e2e8f0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .resumeItem {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+    }
+
+    .resumeItem:last-child {
+      margin-bottom: 0;
+    }
+
+    .itemLogo {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      object-fit: contain;
+      background: #f8fafc;
+      padding: 4px;
+      border: 1px solid #e2e8f0;
+      flex-shrink: 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    }
+
+    .itemLogo.blank-circle {
+      border-radius: 50%;
+      background: #e2e8f0;
+      border: 1px solid #cbd5e1;
+    }
+
+    .itemContent {
+      flex: 1;
+    }
+
+    .itemHeaderRow {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .itemTitle {
+      font-size: 16.5px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .itemDate {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #0369a1;
+      background: #e0f2fe;
+      padding: 2px 10px;
+      border-radius: 10px;
+      margin-left: auto;
+    }
+
+    .itemSubtitle {
+      font-size: 14.5px;
+      font-weight: 600;
+      color: #475569;
+      margin-bottom: 8px;
+    }
+
+    .itemDescription {
+      font-size: 14px;
+      color: #475569;
+      padding-left: 16px;
+      list-style-type: disc;
+    }
+
+    .itemDescription li {
+      margin-bottom: 4px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 13px;
+      color: #94a3b8;
+    }
+
+    /* MOBILE STYLES */
+    @media (max-width: 768px) {
+      body {
+        padding: 0 12px 40px 12px;
+      }
+
+      .siteHeader h1 {
+        font-size: 24px;
+      }
+
+      .navMenu {
+        gap: 6px;
+        padding: 10px 0;
+      }
+
+      .navBtn {
+        padding: 6px 10px;
+        font-size: 12px;
+      }
+
+      .resumeCard {
+        padding: 20px;
+      }
+
+      .resumeHeader {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .resumeItem {
+        gap: 14px;
+      }
+
+      .itemLogo {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Formal Header -->
+    <header class="siteHeader">
+      <h1>My Teaching Portfolio</h1>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav class="navMenu">
+      <a href="index.html" class="navBtn">Classroom Projects</a>
+      <a href="school-moments.html" class="navBtn">School Moments</a>
+      <a href="resume.html" class="navBtn active">My Resume</a>
+    </nav>
+
+    <!-- Resume Content Card -->
+    <main class="resumeCard">
+      <div class="resumeHeader">
+        <div class="resumeTitleInfo">
+          <h2>Youssef Boudar</h2>
+          <p><strong>Teacher of English</strong></p>
+          <p>Nationality: Moroccan</p>
+        </div>
+        <div class="contactDetails">
+          <p><strong>Location:</strong> Résidence Atlantique, 29 Allée des Mimosas, Casablanca 30590</p>
+          <p>
+            <strong>Phone:</strong> +212 681 945 630 
+            <a href="https://wa.me/212681945630" target="_blank" class="actionBtn whatsappBtn">WhatsApp</a>
+          </p>
+          <p>
+            <strong>Email:</strong> Boudaryoussef99@gmail.com 
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Boudaryoussef99@gmail.com" target="_blank" class="actionBtn gmailBtn">Gmail</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- WORK EXPERIENCE SECTION (Newest to Oldest) -->
+      <section class="resumeSection">
+        <h3>Work Experience</h3>
+
+        <!-- Experience 1: Elbilia Skolar -->
+        <div class="resumeItem">
+          <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/Elbilia%20Skolar.jpg" alt="Elbilia Skolar" class="itemLogo">
+          <div class="itemContent">
+            <div class="itemHeaderRow">
+              <span class="itemTitle">English Teacher (Primary & Middle School)</span>
+              <span class="itemDate">Present</span>
+            </div>
+            <div class="itemSubtitle">Elbilia Skolar</div>
+            <ul class="itemDescription">
+              <li>Teaching English to primary and middle school students with interactive lessons and engaging classroom activities.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Experience 2: Groupe Scolaire Al Azhar -->
+        <div class="resumeItem">
+          <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/GroupeScolaireAAzharAzal%C3%A9eCasablanca%20.jpg" alt="Groupe Scolaire Al Azhar" class="itemLogo">
+          <div class="itemContent">
+            <div class="itemHeaderRow">
+              <span class="itemTitle">English Teacher (Primary & Middle School)</span>
+              <span class="itemDate">2025 / 2026</span>
+            </div>
+            <div class="itemSubtitle">Groupe Scolaire Al Azhar - Azalée, Casablanca</div>
+            <ul class="itemDescription">
+              <li>Design and create digital activities and tailored online games based on specific learning modules.</li>
+              <li>Build a positive, supportive classroom environment that encourages student participation.</li>
+              <li>Help students significantly develop their confidence in speaking and understanding English.</li>
+              <li>Collaborate effectively with a large faculty of English teachers to share educational web platforms and digital resources.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Experience 3: iLeng Online Language Platform -->
+        <div class="resumeItem">
+          <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/iLeng%20Online%20Language%20Platform%20.png" alt="iLeng Online Language Platform" class="itemLogo">
+          <div class="itemContent">
+            <div class="itemHeaderRow">
+              <span class="itemTitle">Online English Teacher</span>
+              <span class="itemDate">2024 - 2025</span>
+            </div>
+            <div class="itemSubtitle">iLeng Online Language Platform</div>
+            <ul class="itemDescription">
+              <li>Taught English to remote students using digital platforms and interactive content.</li>
+              <li>Configured and managed targeted digital advertising campaigns on Meta platforms to successfully promote online English lessons for Teachesly.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Experience 4: Académie Centre Génie -->
+        <div class="resumeItem">
+          <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/Acad%C3%A9mieCentre%20G%C3%A9nieCasablanca%20.png" alt="Académie Centre Génie" class="itemLogo">
+          <div class="itemContent">
+            <div class="itemHeaderRow">
+              <span class="itemTitle">English Teacher</span>
+              <span class="itemDate">2023 - 2024</span>
+            </div>
+            <div class="itemSubtitle">Académie Centre Génie, Casablanca</div>
+            <ul class="itemDescription">
+              <li>Delivered engaging ESL lessons strictly focused on verbal communication and practical usage.</li>
+              <li>Adapted lessons and learning materials to meet diverse learner needs and proficiencies.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Experience 5: The American TESOL Academy -->
+        <div class="resumeItem">
+          <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/The%20American%20TESOL%20Academy%20.jpg" alt="The American TESOL Academy" class="itemLogo">
+          <div class="itemContent">
+            <div class="itemHeaderRow">
+              <span class="itemTitle">English Teaching Trainee</span>
+              <span class="itemDate">2023</span>
+            </div>
+            <div class="itemSubtitle">The American TESOL Academy</div>
+            <ul class="itemDescription">
+              <li>Trained extensively in modern English teaching methodologies and structured lesson planning.</li>
+              <li>Learned to adapt classroom instruction for different age groups and varied learner levels.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Experience 6: Agadir Travel Guide -->
+        <div class="resumeItem">
+          <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/Agadir%20Travel%20Guide%2C.jpg" alt="Agadir Travel Guide" class="itemLogo">
+          <div class="itemContent">
+            <div class="itemHeaderRow">
+              <span class="itemTitle">Tour Guide</span>
+              <span class="itemDate">2019 - 2022</span>
+            </div>
+            <div class="itemSubtitle">Agadir Travel Guide, Agadir</div>
+            <ul class="itemDescription">
+              <li>Provided clear, communicative guidance to international tourists, further refining cross-cultural communication skills.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Experience 7: Aain Nakhla Guesthouse -->
+        <div class="resumeItem">
+          <div class="itemLogo blank-circle"></div>
+          <div class="itemContent">
+            <div class="itemHeaderRow">
+              <span class="itemTitle">Guest Services Assistant</span>
+              <span class="itemDate">2017 - 2018</span>
+            </div>
+            <div class="itemSubtitle">Aain Nakhla Guesthouse, Tighmart</div>
+            <ul class="itemDescription">
+              <li>Managed guest relations and daily operations in a hospitality setting.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- EDUCATION SECTION -->
+      <section class="resumeSection">
+        <h3>Education</h3>
+
+        <div class="resumeItem">
+          <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/Faculty%20of%20Letters%20and%20Human%20Sciences%20Ibn%20Zohr%20University%20Agadir.png" alt="Ibn Zohr University" class="itemLogo">
+          <div class="itemContent">
+            <div class="itemHeaderRow">
+              <span class="itemTitle">Bachelor's Degree in English Studies (Linguistics)</span>
+              <span class="itemDate">2023/10/27</span>
+            </div>
+            <div class="itemSubtitle">Faculty of Letters and Human Sciences, Ibn Zohr University - Agadir</div>
+          </div>
+        </div>
+
+        <div class="resumeItem">
+          <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/bachlora%20.png" alt="High School Diploma" class="itemLogo">
+          <div class="itemContent">
+            <div class="itemHeaderRow">
+              <span class="itemTitle">High School Diploma (Baccalaureate)</span>
+              <span class="itemDate">2018/06/20</span>
+            </div>
+            <div class="itemSubtitle">Mohammed V High School - Guelmim</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CERTIFICATIONS & AWARDS SECTION (Newest to Oldest) -->
+      <section class="resumeSection">
+        <h3>Certifications & Awards</h3>
+
+        <div class="resumeItem">
+          <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/oxford-university-press7032.jpg" alt="Oxford University Press" class="itemLogo">
+          <div class="itemContent">
+            <div class="itemHeaderRow">
+              <span class="itemTitle">Certificate of Completion, Summer Professional Development Programme (3 hours)</span>
+              <span class="itemDate">August 2026</span>
+            </div>
+            <div class="itemSubtitle">Oxford University Press</div>
+          </div>
+        </div>
+
+        <div class="resumeItem">
+          <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/exchange%20and%20communication%20.png" alt="Instructional Alignment in EFL Teaching" class="itemLogo">
+          <div class="itemContent">
+            <div class="itemHeaderRow">
+              <span class="itemTitle">Certificate of Participation, Instructional Alignment in EFL Teaching</span>
+              <span class="itemDate">25 April 2026</span>
+            </div>
+            <div class="itemSubtitle">Professional Development</div>
+          </div>
+        </div>
+
+        <div class="resumeItem">
+          <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/GroupeScolaireAAzharAzal%C3%A9eCasablanca%20.jpg" alt="Groupe Scolaire Al Azhar" class="itemLogo">
+          <div class="itemContent">
+            <div class="itemHeaderRow">
+              <span class="itemTitle">Teacher of the Year & Zero Reclamation from Parents Award</span>
+              <span class="itemDate">2025 / 2026</span>
+            </div>
+            <div class="itemSubtitle">Groupe Scolaire Al Azhar - Azalée</div>
+            <ul class="itemDescription">
+              <li>Recognized for teaching excellence and achieving zero student/parent reclamations during the academic year.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="resumeItem">
+          <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/The%20American%20TESOL%20Academy%20.jpg" alt="American TESOL Academy" class="itemLogo">
+          <div class="itemContent">
+            <div class="itemHeaderRow">
+              <span class="itemTitle">TESOL Certificate</span>
+              <span class="itemDate">2023</span>
+            </div>
+            <div class="itemSubtitle">American TESOL Academy</div>
+          </div>
+        </div>
+
+        <div class="resumeItem">
+          <div class="itemLogo blank-circle"></div>
+          <div class="itemContent">
+            <div class="itemHeaderRow">
+              <span class="itemTitle">Certificate of Participation, 21st Century Skills Workshop</span>
+              <span class="itemDate">2022 - 2023</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="resumeItem">
+          <div class="itemLogo blank-circle"></div>
+          <div class="itemContent">
+            <div class="itemHeaderRow">
+              <span class="itemTitle">English Club Organization Certificate</span>
+              <span class="itemDate">2018 - 2019</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Download CV Button at the End -->
+    <div class="downloadContainer">
+      <a href="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/Youssef%20Boudar%20-%20Resume.pdf" download="Youssef_Boudar_Resume.pdf" target="_blank" class="downloadCvBtn">Download My CV</a>
+    </div>
+
+    <footer>
+      <p>&copy; 2026 Youssef Boudar | Teacher of English</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
