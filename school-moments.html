@@ -18,15 +18,18 @@
       padding: 0;
     }
 
+    /* 
+       NEW THEME: "Cool Academic" 
+       Using slate grays, charcoal, and warm rust/terracotta accents 
+    */
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: #f8fafc;
-      color: #0f172a;
+      background-color: #f4f4f5; /* Slightly warmer light gray */
+      color: #18181b; /* Dark zinc */
       line-height: 1.6;
       padding: 0 16px 60px 16px;
     }
 
-    /* Widened the container slightly for the horizontal blog layout */
     .container {
       max-width: 950px; 
       margin: 0 auto;
@@ -35,117 +38,171 @@
     /* Site Header */
     .siteHeader {
       text-align: center;
-      padding: 30px 0 15px 0;
+      padding: 40px 0 20px 0;
     }
 
     .siteHeader h1 {
-      font-size: 32px;
+      font-size: 34px;
       font-weight: 800;
-      color: #0f172a;
+      color: #27272a; /* Deep charcoal */
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
     }
 
     /* Navigation Menu */
     .navMenu {
       position: sticky;
       top: 0;
-      background-color: rgba(248, 250, 252, 0.95);
+      background-color: rgba(244, 244, 245, 0.95);
       backdrop-filter: blur(8px);
-      padding: 12px 0;
+      padding: 15px 0;
       z-index: 1000;
       display: flex;
       justify-content: center;
-      gap: 12px;
-      margin-bottom: 50px;
-      border-bottom: 1px solid #e2e8f0;
+      gap: 15px;
+      margin-bottom: 55px;
+      border-bottom: 1px solid #d4d4d8;
     }
 
     .navBtn {
-      padding: 8px 16px;
+      padding: 10px 20px;
       background: #ffffff;
-      color: #334155;
-      border: 1px solid #cbd5e1;
-      border-radius: 8px;
-      font-size: 13.5px;
+      color: #3f3f46;
+      border: 1px solid #d4d4d8;
+      border-radius: 6px;
+      font-size: 14px;
       font-weight: 600;
       text-decoration: none;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      transition: all 0.2s ease;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+      transition: all 0.25s ease;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     .navBtn:hover, .navBtn.active {
-      background: #0f172a;
+      background: #27272a; /* Charcoal background */
       color: #ffffff;
-      border-color: #0f172a;
+      border-color: #27272a;
     }
 
-    /* =========================================
-       NEW CLASSIC BLOG LAYOUT 
-       ========================================= */
-    
+    /* Blog Layout */
     .blogPost {
       display: flex;
       background: #ffffff;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-      margin-bottom: 40px;
-      overflow: hidden; /* Keeps the rounded corners intact */
-      border: 1px solid #f1f5f9;
-      min-height: 350px;
+      border-radius: 12px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+      margin-bottom: 45px;
+      overflow: hidden;
+      border: 1px solid #e4e4e7;
     }
 
     /* Media Side (Left) */
     .blogMedia {
-      flex: 0 0 40%; /* Takes up 40% of the width */
+      flex: 0 0 40%;
       display: flex;
       flex-direction: column;
-      background-color: #e2e8f0;
+      background-color: #f4f4f5;
+      padding: 15px;
+      justify-content: center;
+      align-items: center;
     }
 
-    /* This makes sure images fill their space perfectly without stretching */
     .blogMedia img {
       width: 100%;
-      height: 100%;
+      height: 250px;
       object-fit: cover; 
-      flex: 1;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .blogMedia.single-image img {
+      height: 280px;
+    }
+
+    /* Automated Slider Styling */
+    .sliderContainer {
+      position: relative;
+      width: 100%;
+      height: 280px;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #18181b; /* Dark backdrop for sliders */
+    }
+
+    /* Custom heights for specific sliders */
+    .winnerSlider {
+      height: 450px;
+      margin-top: 30px;
+      background: #f4f4f5; 
+    }
+    
+    .allAboutMeSlider {
+      height: 300px;
+      background: #f4f4f5;
+    }
+
+    .sliderImages {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s ease-in-out;
+    }
+
+    .sliderImages img {
+      min-width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    /* FIX: Ensured Penpal slider, winner, and about me images are NOT cropped */
+    #winnerSliderImages img, 
+    #aboutMeImages img,
+    #penpalSlider img,
+    #teachersDaySlider img,
+    #greenMarchSlider img {
+      object-fit: contain; 
     }
 
     /* Content Side (Right) */
     .blogContent {
-      flex: 1; /* Takes the remaining 60% */
-      padding: 35px 40px;
+      flex: 1;
+      padding: 35px 45px;
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
 
+    /* The new accent color: A sophisticated vintage rust/leather */
     .blogDate {
-      font-size: 13px;
-      font-weight: 700;
-      color: #0ea5e9;
+      font-size: 12.5px;
+      font-weight: 800;
+      color: #9a3412; /* Rich Rust / Terracotta */
       text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
+      letter-spacing: 1.2px;
+      margin-bottom: 12px;
       display: inline-block;
+      border-bottom: 2px solid #9a3412;
+      padding-bottom: 3px;
     }
 
     .blogTitle {
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 800;
-      color: #0f172a;
+      color: #18181b;
       margin-bottom: 20px;
       line-height: 1.3;
     }
 
     .blogText {
       font-size: 15.5px;
-      color: #475569;
-      line-height: 1.7;
+      color: #52525b; /* Cool dark gray */
+      line-height: 1.8;
     }
 
     .blogText p {
@@ -156,42 +213,162 @@
       margin-bottom: 0;
     }
 
+    /* Combined Game Post Styling */
+    .fullWidthPost {
+      display: flex;
+      flex-direction: column;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+      margin-bottom: 45px;
+      overflow: hidden;
+      border: 1px solid #e4e4e7;
+      padding: 40px 45px;
+    }
+
+    /* Embedded Game Styling inside Post */
+    .gameWrapper {
+      background: #1c1917; /* Dark stone */
+      border-radius: 12px;
+      padding: 25px;
+      color: #e7e5e4;
+      text-align: center;
+      margin-top: 25px;
+      box-shadow: inset 0 0 15px rgba(0,0,0,0.6);
+      border: 1px solid #44403c;
+    }
+
+    .gameWrapper h1 {
+      font-family: 'Papyrus', 'Trebuchet MS', sans-serif;
+      font-size: 28px;
+      letter-spacing: 2px;
+      text-shadow: 1px 1px 4px #000;
+      margin-bottom: 15px;
+      color: #fcd34d;
+    }
+
+    .gameWrapper #game-title {
+      font-family: 'Papyrus', 'Trebuchet MS', sans-serif;
+      display: inline-block;
+      padding: 6px 15px;
+      background: rgba(120, 113, 108, 0.3);
+      border-radius: 8px;
+      font-size: 22px;
+      letter-spacing: 2px;
+      color: #fef3c7;
+    }
+
+    .gameWrapper #progress-container {
+      width: 80%;
+      height: 8px;
+      margin: 15px auto 10px;
+      background: url('https://i.imgur.com/0QpRr8p.png') repeat-x;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .gameWrapper #progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #b45309, #d97706); /* Academic amber gradient */
+      transition: width 0.8s ease-in-out;
+    }
+
+    .gameWrapper #word-title {
+      font-size: 22px;
+      margin-top: 10px;
+      color: #fff;
+    }
+
+    .gameWrapper button {
+      padding: 10px 25px;
+      background: #9a3412; /* Rust accent */
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      color: #fff;
+      box-shadow: 0px 4px 6px rgba(0,0,0,0.3);
+      margin-top: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: background 0.2s;
+    }
+
+    .gameWrapper button:hover {
+      background: #7c2d12;
+    }
+
+    .gameWrapper .option {
+      background: #292524;
+      padding: 12px;
+      margin: 10px auto;
+      width: 85%;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+      font-size: 16px;
+      border: 1px solid #44403c;
+      transition: background 0.2s;
+    }
+
+    .gameWrapper .option:hover {
+      background: #44403c;
+    }
+
     footer {
       text-align: center;
       margin-top: 60px;
-      font-size: 13px;
-      color: #94a3b8;
+      font-size: 14px;
+      font-weight: 600;
+      color: #71717a;
+      letter-spacing: 0.5px;
     }
 
-    /* =========================================
-       MOBILE ADAPTATIONS
-       ========================================= */
+    /* Mobile Adaptations */
     @media (max-width: 768px) {
       .navMenu {
-        gap: 6px;
+        gap: 8px;
         padding: 10px 0;
       }
       .navBtn {
-        padding: 6px 10px;
+        padding: 8px 12px;
         font-size: 12px;
       }
       
-      /* Stack the blog layout vertically on small screens */
       .blogPost {
         flex-direction: column;
       }
-      
-      .blogMedia {
-        height: 250px; /* Fixed height for images on mobile */
-        flex-direction: row; /* Put the two images side by side on mobile */
-      }
-      
+
       .blogContent {
+        order: 1;
         padding: 25px;
       }
       
+      .blogMedia {
+        order: 2;
+        padding: 15px;
+      }
+
+      .sliderContainer {
+        height: 240px;
+      }
+
+      .winnerSlider {
+        height: 350px;
+      }
+
+      .allAboutMeSlider {
+        height: 260px;
+      }
+      
+      .fullWidthPost {
+        padding: 25px 20px;
+      }
+      
       .blogTitle {
-        font-size: 20px;
+        font-size: 22px;
       }
     }
   </style>
@@ -213,39 +390,198 @@
 
     <main>
 
-      <!-- POST 1: Flashcard Memory Game -->
+      <!-- POST 1: Certificate of Recognition -->
       <article class="blogPost">
-        <div class="blogMedia">
-          <!-- Notice these are <img> tags now. The links have "uc?export=view&id=" to force Google Drive to send just the image, no black bars! -->
-          <img src="https://drive.google.com/uc?export=view&id=1p6Qsrs7nkJk41ShXsRvAjwFlU8ABZO40" alt="Flashcards on desk">
-          <img src="https://drive.google.com/uc?export=view&id=1JwJFGmtDwdCndnHsMZl-8Cq2J2kcCw0q" alt="Students playing memory game">
+        <div class="blogMedia single-image">
+          <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/certifcate%20zero%20parnet%20reclamation%20.png" alt="Certificate of Zero Parent Complaints">
         </div>
         
         <div class="blogContent">
-          <span class="blogDate">August 2026</span>
+          <span class="blogDate">End of Year Ceremony 2026</span>
+          <h2 class="blogTitle">Certificate of Recognition and Zero Parent Complaints</h2>
+          
+          <div class="blogText">
+            <p>I was deeply honored to receive this special certificate from the school founder during our end of year celebration ceremony.</p>
+            <p>This recognition was awarded for achieving zero parent complaints throughout the entire academic year. It reflects a strong commitment to maintaining positive communication, dedication in the classroom, and building great trust with both students and parents.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- POST 2: Combined Game and Winner Student Photos -->
+      <article class="fullWidthPost">
+        <span class="blogDate">Interactive Learning</span>
+        <h2 class="blogTitle" style="margin-bottom: 10px;">Ancient Civilization Game Challenge</h2>
+        
+        <div class="blogText">
+          <p>To make learning exciting and rewarding, I designed an interactive online vocabulary game based on ancient Egyptian civilization and archaeological themes. Students had to complete the entire game with correct answers to unlock a special secret completion code.</p>
+          <p>The student who secured first place earned a custom designed Ancient Egypt themed shirt featuring the game icon and his name printed on it, proudly presented to him at our end of year celebration ceremony!</p>
+          <p>Try out the vocabulary game created for my students below! Answer all the questions correctly to unlock the completion code.</p>
+        </div>
+
+        <!-- Playable Game Widget -->
+        <div class="gameWrapper">
+          <div id="start-screen">
+            <h1>MYSTERIES OF THE WORLD</h1>
+            <button onclick="startGame()">Start Game</button>
+          </div>
+
+          <div id="game-screen" style="display:none;">
+            <h1 id="game-title">Ancient Civilization Challenge</h1>
+            <div id="progress-container">
+              <div id="progress-bar"></div>
+            </div>
+            <h2 id="word-title"></h2>
+            <div id="options"></div>
+          </div>
+
+          <div id="end-screen" style="display:none; margin-top:40px;">
+            <h1 id="end-title"></h1>
+            <p id="end-message"></p>
+            <button id="retry-btn" onclick="restartGame()">Try Again</button>
+          </div>
+        </div>
+
+        <!-- Automated Slider for Winner Photos -->
+        <div class="sliderContainer winnerSlider">
+          <div class="sliderImages" id="winnerSliderImages">
+            <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/vocabulary%20onli%20ne%20game%20.jpg" alt="First Place Winner Game Student 1">
+            <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/IMG_29vocabulry%20onlien%20game66.jpg" alt="First Place Winner Game Student 2">
+          </div>
+        </div>
+      </article>
+
+      <!-- POST 3: All About Me & Graduation Manifestation -->
+      <article class="blogPost">
+        <div class="blogMedia" style="padding:0;">
+          <div class="sliderContainer allAboutMeSlider">
+            <div class="sliderImages" id="aboutMeImages">
+              <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/all%20bout%20me%20post/0ED35397-97E7-45D2-BCAE-F54262CB0C9E.jpeg" alt="Student Portrait with Graduation Cap">
+              <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/all%20bout%20me%20post/3F5C28EC-6B64-49A0-96F6-195E8B0F207E.jpeg" alt="Student Portrait with Graduation Cap">
+              <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/all%20bout%20me%20post/4110EBDA-D080-4E91-B9DC-04BB6BD8D6F4.jpeg" alt="Student Portrait with Graduation Cap">
+              <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/all%20bout%20me%20post/94780659-F450-468C-A7B0-0A8EB85A85BF.jpeg" alt="Student Portrait with Graduation Cap">
+              <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/all%20bout%20me%20post/7C503E3E-F7D1-4862-98D4-3AFF1CD96F99.jpeg" alt="All about me project page">
+              <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/all%20bout%20me%20post/IMG_1187.HEIC" alt="All about me project wall">
+              <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/all%20bout%20me%20post/IMG_1185.HEIC" alt="All about me project wall">
+              <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/all%20bout%20me%20post/IMG_1184.HEIC" alt="All about me project wall">
+              <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/all%20bout%20me%20post/IMG_1180.HEIC" alt="All about me project wall">
+              <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/all%20bout%20me%20post/CCD83859-F65D-44A0-A820-8CF941600B97.jpeg" alt="All about me project page">
+              <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/all%20bout%20me%20post/C75C32CB-1B94-4236-B40C-40D198931F3A%20(1).jpeg" alt="All about me project page">
+              <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/all%20bout%20me%20post/96955FCC-03DF-47EF-845D-CC913300F777.jpeg" alt="All about me project page">
+            </div>
+          </div>
+        </div>
+        
+        <div class="blogContent">
+          <span class="blogDate">Classroom Vision</span>
+          <h2 class="blogTitle">"All About Me" Wall Magazine & Graduation Manifestation</h2>
+          
+          <div class="blogText">
+            <p>To start the academic year off with excitement and vision, I photographed my students and digitally edited their pictures to add graduation hats! This was a fun way to manifest success and encourage them from day one.</p>
+            <p>I printed these special portraits for our classroom "All About Me" wall magazine. Each student glued their picture down and wrote about themselves—including their names, ages, hobbies, and things they love. The students were incredibly happy and proud of their work!</p>
+            <p>I made sure every student did the project completely by themselves. By keeping this on our classroom wall all year, we could look back at the end of the semester and physically see the amazing progress they had made in their writing skills.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- POST 4: USA Penpal and Cultural Exchange Box -->
+      <article class="blogPost">
+        <div class="blogMedia" style="padding:0; background:#18181b;">
+          <div class="sliderContainer">
+            <div class="sliderImages" id="penpalSlider">
+              <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/penpalsusa/4th%20Grade_page-0004.jpg" alt="Penpal document page 4">
+              <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/penpalsusa/4th%20Grade_page-0007.jpg" alt="Penpal document page 7">
+              <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/penpalsusa/4th%20Grade_page-0024.jpg" alt="Penpal document page 24">
+              <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/penpalsusa/4th%20Grade_page-0027.jpg" alt="Penpal document page 27">
+              <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/penpalsusa/4th%20Grade_page-0030.jpg" alt="Penpal document page 30">
+              <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/penpalsusa/4th%20Grade_page-0032.jpg" alt="Penpal document page 32">
+              <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/penpalsusa/IMpenpa_7577.jpg" alt="Penpal moment 7577">
+              <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/penpalsusa/IMGpenpal_7575.jpg" alt="Penpal moment 7575">
+              <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/penpalsusa/IMG_7576.jpg" alt="Penpal moment 7576">
+              <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/penpalsusa/IMG_7556.jpg" alt="Penpal moment 7556">
+              <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/penpalsusa/IMG_7554.jpg" alt="Penpal moment 7554">
+              <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/penpalsusa/IMG_7528.jpg" alt="Penpal moment 7528">
+              <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/penpalsusa/IMG_7527.jpg" alt="Penpal moment 7527">
+              <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/penpalsusa/IMG_7526.jpg" alt="Penpal moment 7526">
+            </div>
+          </div>
+        </div>
+        
+        <div class="blogContent">
+          <span class="blogDate">Global Connections</span>
+          <h2 class="blogTitle">USA Penpal and Cultural Box Exchange</h2>
+          
+          <div class="blogText">
+            <p>An amazing cultural exchange experience bridging Morocco and the United States! I connected with an English teacher in the USA to organize a letter penpal writing project and a cultural box exchange between our classes.</p>
+            <p>My students had a wonderful time preparing our local cultural box to send over, and they were thrilled to receive letters, postcards, and wonderful gifts sent back by their American penpals.</p>
+            <p>Activities like this foster global awareness, cross cultural knowledge, and authentic communication skills for our learners.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- POST 5: Vocabulary Memory Match Game -->
+      <article class="blogPost">
+        <div class="blogMedia">
+          <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/game%20class%20.jpg" alt="Flashcards on desk">
+          <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/IMG_game%20class595.jpg" alt="Students playing memory game" style="margin-top: 10px;">
+        </div>
+        
+        <div class="blogContent">
+          <span class="blogDate">Classroom Strategy</span>
           <h2 class="blogTitle">Vocabulary Memory Match Game</h2>
           
           <div class="blogText">
-            <p>One of my favorite ways to either kick off or wrap up a vocabulary lesson! We play a Flashcard Memory Matching game covering all the English words we've learned throughout the year.</p>
-            <p>The cards are placed face down on the students' desks. Half of the cards feature images, while the other half have the corresponding vocabulary words written on them. Students take turns flipping two cards at a time, trying to find the matching image and word pair.</p>
+            <p>One of my favorite ways to either kick off or wrap up a vocabulary lesson! We play a Flashcard Memory Matching game covering all the English words we have learned throughout the year.</p>
+            <p>The cards are placed face down on the students desks. Half of the cards feature images, while the other half have the corresponding vocabulary words written on them. Students take turns flipping two cards at a time, trying to find the matching image and word pair.</p>
             <p>If they guess right, they win the cards; if they guess wrong, they flip them back over. It is a highly engaging, fun way to reinforce memory skills and review vocabulary!</p>
           </div>
         </div>
       </article>
 
-      <!-- POST 2: Classroom Group Presentation (Placeholder) -->
+      <!-- POST 6: Teacher's Day Celebration -->
       <article class="blogPost">
-        <div class="blogMedia">
-          <!-- A single image will automatically take up the full left side -->
-          <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/Elbilia%20Skolar.jpg" alt="Classroom Moment">
+        <div class="blogMedia" style="padding:0; background:#18181b;">
+          <div class="sliderContainer">
+            <div class="sliderImages" id="teachersDaySlider">
+              <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/teahcers%20and%20families/1f3568eb-e61f-48eb-8cfc-54eaf9fcc423.jpg" alt="Teacher's Day Celebration 1">
+              <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/teahcers%20and%20families/7a03b323-046f-404c-ae3a-d02bb1adccaf.jpg" alt="Teacher's Day Celebration 2">
+              <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/teahcers%20and%20families/ef8ab591-8938-4fcd-8102-711ddd866bd4.jpg" alt="Teacher's Day Celebration 3">
+            </div>
+          </div>
         </div>
         
         <div class="blogContent">
-          <span class="blogDate">Academic Year 2025/2026</span>
-          <h2 class="blogTitle">Classroom Group Presentation</h2>
+          <span class="blogDate">Community & Gratitude</span>
+          <h2 class="blogTitle">Teacher's Day Celebration</h2>
           
           <div class="blogText">
-            <p>Our middle school students working collaboratively on their term projects. Creating group environments fosters teamwork and practical vocabulary use in real-time discussions.</p>
+            <p>A truly heartwarming and memorable Teacher's Day! The parents organized a beautiful surprise by bringing delicious food to the school to thank the teaching staff for our dedication to their children.</p>
+            <p>We shared meaningful conversations between the teachers, the parents, and the administration over the shared meal. It was a profoundly proud moment to feel so honored and appreciated by the families of the students we work with every day.</p>
+            <p>Building strong bridges between the classroom and the home is essential, and moments like this remind us why we love what we do.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- POST 7: Green March Celebration -->
+      <article class="blogPost">
+        <div class="blogMedia" style="padding:0; background:#18181b;">
+          <div class="sliderContainer">
+            <div class="sliderImages" id="greenMarchSlider">
+              <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/green%20march/IMG_2245.jpg" alt="Green March Event 1">
+              <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/green%20march/IMG_2291.jpg" alt="Green March Event 2">
+              <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/green%20march/IMG_2297.jpg" alt="Green March Event 3">
+              <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/green%20march/IMG_2300.jpg" alt="Green March Event 4">
+            </div>
+          </div>
+        </div>
+        
+        <div class="blogContent">
+          <span class="blogDate">Leadership & Event Organization</span>
+          <h2 class="blogTitle">Green March National Celebration</h2>
+          
+          <div class="blogText">
+            <p>I had the immense honor of being the lead organizer and coordinator for our school's Green March national celebration.</p>
+            <p>Taking charge of an event of this scale meant managing the timing, scheduling student presentations, curating the traditional songs, and acting as the main point of coordination between all the teachers and the school administration.</p>
+            <p>The celebration turned out to be absolutely fantastic. Seeing the students proudly participate and watching the entire school community come together to successfully execute the vision we planned was an incredibly rewarding experience!</p>
           </div>
         </div>
       </article>
@@ -258,5 +594,244 @@
 
   </div>
 
+  <!-- AUDIO ELEMENTS -->
+  <audio id="bgm" preload="auto" loop>
+    <source src="https://github.com/boudaryoussef99-bit/game-sound-effect-/raw/refs/heads/main/%23Ancient%20%23Egyptian%20Music%20No%20Copyright%20-%20Beautiful%20%23Arabian%20Music%20&%20Egyptian%20Music%20-%20Arabian%20%23Nights.mp3">
+  </audio>
+  <audio id="correctSound" preload="auto">
+    <source src="https://github.com/boudaryoussef99-bit/game-sound-effect-/raw/refs/heads/main/stoneblockdragwoodgrind-82327.mp3">
+  </audio>
+  <audio id="wrongSound" preload="auto">
+    <source src="https://github.com/boudaryoussef99-bit/game-sound-effect-/raw/refs/heads/main/leapster-wrong-answer-sound.mp3">
+  </audio>
+  <audio id="warningSound" preload="auto">
+    <source src="https://github.com/boudaryoussef99-bit/game-sound-effect-/raw/refs/heads/main/are-you-sure-about-that_sk0gKx5.mp3">
+  </audio>
+  <audio id="winSound" preload="auto">
+    <source src="https://github.com/boudaryoussef99-bit/game-sound-effect-/raw/refs/heads/main/gta-san-andreas-mission-complete-sound-hq_4ZVTov6.mp3">
+  </audio>
+  <audio id="loseSound" preload="auto">
+    <source src="https://github.com/boudaryoussef99-bit/game-sound-effect-/raw/refs/heads/main/gta-iv-mission-failed.mp3">
+  </audio>
+  <audio id="celebrateSound" preload="auto">
+    <source src="https://github.com/boudaryoussef99-bit/game-sound-effect-/raw/refs/heads/main/celebrate-good-times.mp3">
+  </audio>
+
+  <script>
+    /* Automated Penpal Slider Script */
+    const penpalImages = document.getElementById('penpalSlider');
+    const totalPenpal = penpalImages.children.length;
+    let currentPenpal = 0;
+
+    setInterval(() => {
+      currentPenpal = (currentPenpal + 1) % totalPenpal;
+      penpalImages.style.transform = `translateX(-${currentPenpal * 100}%)`;
+    }, 3000);
+
+    /* Automated Winner Slider Script */
+    const winnerImages = document.getElementById('winnerSliderImages');
+    const totalWinner = winnerImages.children.length;
+    let currentWinner = 0;
+
+    setInterval(() => {
+      currentWinner = (currentWinner + 1) % totalWinner;
+      winnerImages.style.transform = `translateX(-${currentWinner * 100}%)`;
+    }, 4000); 
+
+    /* Automated All About Me Slider Script */
+    const aboutMeImages = document.getElementById('aboutMeImages');
+    const totalAboutMe = aboutMeImages.children.length;
+    let currentAboutMe = 0;
+
+    setInterval(() => {
+      currentAboutMe = (currentAboutMe + 1) % totalAboutMe;
+      aboutMeImages.style.transform = `translateX(-${currentAboutMe * 100}%)`;
+    }, 3500); 
+
+    /* Automated Teacher's Day Slider Script */
+    const teachersDayImages = document.getElementById('teachersDaySlider');
+    const totalTeachersDay = teachersDayImages.children.length;
+    let currentTeachersDay = 0;
+
+    setInterval(() => {
+      currentTeachersDay = (currentTeachersDay + 1) % totalTeachersDay;
+      teachersDayImages.style.transform = `translateX(-${currentTeachersDay * 100}%)`;
+    }, 3800); 
+
+    /* Automated Green March Slider Script */
+    const greenMarchImages = document.getElementById('greenMarchSlider');
+    const totalGreenMarch = greenMarchImages.children.length;
+    let currentGreenMarch = 0;
+
+    setInterval(() => {
+      currentGreenMarch = (currentGreenMarch + 1) % totalGreenMarch;
+      greenMarchImages.style.transform = `translateX(-${currentGreenMarch * 100}%)`;
+    }, 3600); 
+
+    /* Game Script */
+    const vocabulary = [
+      {word:"landmark", defs:["A famous or important place","To vanish","To publish something online"]},
+      {word:"archaeological site", defs:["A place where old objects are found","A person who hunts animals","100 years"]},
+      {word:"ancient civilisation", defs:["People from thousands of years ago","Gold or valuable items","A small settlement"]},
+      {word:"expedition", defs:["A journey to discover something","A cooking style","A type of tool"]},
+      {word:"artefacts", defs:["Old objects made by humans","A type of ship","A preserved dead body"]},
+      {word:"treasure", defs:["Gold or valuable items","A person who writes documents","Extremely interesting"]},
+      {word:"mysterious", defs:["Something strange or unknown","A journey to discover something","A small boat"]},
+      {word:"hidden", defs:["Kept out of sight","A journey to discover something","A type of plant"]},
+      {word:"tomb", defs:["A place where someone is buried","A deity worshiped in ancient Egypt","A person who studies ancient artifacts"]},
+      {word:"hunter", defs:["A person who hunts animals","A type of tree layer","A preserved dead body"]},
+      {word:"area", defs:["A particular region or space","A musical instrument","A small settlement"]},
+      {word:"century", defs:["100 years","A type of coin","A deity worshiped in ancient Egypt"]},
+      {word:"jewel", defs:["A precious stone","A type of plant","Extremely interesting"]},
+      {word:"database", defs:["A collection of data","A type of ship","A preserved dead body"]},
+      {word:"definitely", defs:["Without doubt","A journey to discover something","A small settlement"]},
+      {word:"village", defs:["A small settlement","Extremely interesting","A type of coin"]},
+      {word:"farming tool", defs:["Tool used in agriculture","A musical instrument","A journey to discover something"]},
+      {word:"fascinating", defs:["Extremely interesting","A small boat","A preserved dead body"]},
+      {word:"bark", defs:["The sound a dog makes","A type of ship","A journey to discover something"]},
+      {word:"merchant", defs:["A person who sells goods","A preserved dead body","A deity worshiped in ancient Egypt"]},
+      {word:"scribe", defs:["A person who writes documents","Extremely interesting","A small settlement"]},
+      {word:"mummy", defs:["A preserved dead body","A type of ship","A musical instrument"]},
+      {word:"papyrus", defs:["Ancient paper made from plant","A deity worshiped in ancient Egypt","A preserved dead body"]},
+      {word:"hieroglyphics", defs:["Ancient Egyptian writing","A musical instrument","A small settlement"]},
+      {word:"Egyptian god", defs:["A deity worshiped in ancient Egypt","Extremely interesting","A preserved dead body"]},
+      {word:"Egyptian goddess", defs:["A female deity in ancient Egypt","A musical instrument","A small settlement"]},
+      {word:"archaeologist", defs:["A person who studies ancient artifacts","A deity worshiped in ancient Egypt","A preserved dead body"]},
+      {word:"pharaoh", defs:["Ancient Egyptian ruler","Extremely interesting","A musical instrument"]},
+      {word:"headdress", defs:["Ornamental headwear","A small settlement","A preserved dead body"]},
+      {word:"bury", defs:["To put something in the ground","A deity worshiped in ancient Egypt","A preserved dead body"]},
+      {word:"Egyptology", defs:["The study of ancient Egypt","A small settlement","A musical instrument"]},
+      {word:"knowledge", defs:["Information and understanding","A preserved dead body","A deity worshiped in ancient Egypt"]},
+      {word:"appearance", defs:["The way something looks","Extremely interesting","A small settlement"]},
+      {word:"horn", defs:["A hard projection on animals or a musical instrument","A preserved dead body","A deity worshiped in ancient Egypt"]},
+      {word:"throne", defs:["The seat of a king or ruler","Extremely interesting","A small settlement"]},
+      {word:"weak", defs:["Not strong","A musical instrument","A preserved dead body"]},
+      {word:"suffer", defs:["To experience pain or hardship","A deity worshiped in ancient Egypt","Extremely interesting"]},
+      {word:"kill", defs:["To cause death","A musical instrument","A small settlement"]},
+      {word:"injury", defs:["Physical harm","A preserved dead body","Extremely interesting"]},
+      {word:"illness", defs:["Sickness or disease","A small settlement","A deity worshiped in ancient Egypt"]},
+      {word:"curse", defs:["A spell bringing bad luck","Extremely interesting","A musical instrument"]},
+      {word:"connected", defs:["Linked or related","A small settlement","A preserved dead body"]},
+      {word:"spooky", defs:["Scary or eerie","To vanish","To publish something online"]},
+      {word:"disappear", defs:["To vanish","To publish something online","Scary or eerie"]},
+      {word:"accident", defs:["An unplanned event","To publish something online","To vanish"]},
+      {word:"post", defs:["To publish something online","To vanish","Scary or eerie"]},
+      {word:"comment", defs:["To write a note or opinion","Scary or eerie","To publish something online"]},
+      {word:"pirate", defs:["A person who robs ships at sea","To publish something online","To vanish"]},
+      {word:"monster", defs:["A scary imaginary creature","Scary or eerie","To publish something online"]}
+    ];
+
+    let index = 0;
+    let mistakes = 0;
+    let warningPlayed = false;
+
+    function startGame() {
+      index = 0;
+      mistakes = 0;
+      warningPlayed = false;
+      document.querySelector('.gameWrapper #start-screen').style.display = "none";
+      document.querySelector('.gameWrapper #end-screen').style.display = "none";
+      document.querySelector('.gameWrapper #game-screen').style.display = "block";
+
+      document.getElementById("progress-bar").style.width = "0%";
+
+      const bgm = document.getElementById("bgm");
+      bgm.volume = 0.4;
+      bgm.play();
+
+      loadWord();
+    }
+
+    function restartGame(){
+      startGame();
+      document.getElementById("retry-btn").style.display = "none";
+    }
+
+    function loadWord() {
+      const word = vocabulary[index];
+      document.getElementById("word-title").textContent = word.word;
+
+      const optionsDiv = document.getElementById("options");
+      optionsDiv.innerHTML = "";
+
+      const correct = word.defs[0];
+      const otherCorrects = vocabulary.filter(w => w.word !== word.word).map(w => w.defs[0]);
+      const shuffled = otherCorrects.sort(() => Math.random() - 0.5);
+      const distractors = shuffled.slice(0,2);
+      const choices = [correct, ...distractors].sort(() => Math.random() - 0.5);
+
+      choices.forEach(def => {
+        const btn = document.createElement("div");
+        btn.className = "option";
+        btn.textContent = def;
+        btn.onclick = () => check(def);
+        optionsDiv.appendChild(btn);
+      });
+    }
+
+    function check(selected) {
+      const correct = vocabulary[index].defs[0];
+      const options = document.querySelectorAll('.gameWrapper .option');
+      const progressBar = document.getElementById("progress-bar");
+
+      options.forEach(opt => { opt.style.pointerEvents = 'none'; });
+
+      if (selected === correct) {
+        const correctSound = document.getElementById("correctSound");
+        correctSound.currentTime = 0;
+        correctSound.play();
+
+        correctSound.onplay = () => {
+          let progressPercent = ((index + 1)/vocabulary.length)*100;
+          progressBar.style.width = progressPercent + "%";
+        };
+      } else {
+        mistakes++;
+        document.getElementById("wrongSound").play();
+
+        if (mistakes > 7 && Math.random() < 0.4 && !warningPlayed) {
+          warningPlayed = true;
+          setTimeout(() => {
+            document.getElementById("warningSound").play();
+            warningPlayed = false;
+          }, 500);
+        }
+      }
+
+      setTimeout(() => {
+        index++;
+        if (index >= vocabulary.length) finish();
+        else loadWord();
+      }, 1200);
+    }
+
+    function finish() {
+      document.querySelector('.gameWrapper #game-screen').style.display = "none";
+      document.querySelector('.gameWrapper #end-screen').style.display = "block";
+
+      const bgm = document.getElementById("bgm");
+      bgm.pause();
+
+      const winSound = document.getElementById("winSound");
+      const loseSound = document.getElementById("loseSound");
+      const celebrateSound = document.getElementById("celebrateSound");
+      const retryBtn = document.getElementById("retry-btn");
+
+      if (mistakes === 0) {
+        document.getElementById("end-title").textContent = "Perfect! Well done!";
+        document.getElementById("end-message").innerHTML = `You got everything correct!<br>Your secret code is: <strong>8194</strong>`;
+        
+        winSound.play();
+        celebrateSound.play();
+        retryBtn.style.display = "none";
+      } else {
+        document.getElementById("end-title").textContent = "Try Again!";
+        document.getElementById("end-message").innerHTML = `You made ${mistakes} mistake(s).<br>You must get all answers correct to see the code.`;
+        
+        loseSound.play();
+        retryBtn.style.display = "inline-block";
+      }
+    }
+  </script>
 </body>
 </html>

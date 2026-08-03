@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classroom Projects - My Teaching Portfolio</title>
+  
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* Global Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f8fafc;
+      color: #0f172a;
+      line-height: 1.6;
+      padding: 0 16px 60px 16px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Bolder Formal Academic Header */
+    .siteHeader {
+      text-align: center;
+      padding: 40px 0 20px 0;
+    }
+
+    .siteHeader h1 {
+      font-size: 38px;
+      font-weight: 800;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    /* AUTHENTIC STICKY NAVIGATION MENU */
+    .navMenu {
+      position: sticky;
+      top: 0;
+      background-color: rgba(248, 250, 252, 0.95);
+      backdrop-filter: blur(8px);
+      padding: 16px 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .navBtn {
+      padding: 10px 20px;
+      background: #ffffff;
+      color: #334155;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+
+    .navBtn:hover {
+      background: #0f172a;
+      color: #ffffff;
+      border-color: #0f172a;
+    }
+
+    /* PROJECTS SECTION */
+    .projectCard {
+      background: #ffffff;
+      padding: 28px;
+      border-radius: 24px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      margin-bottom: 30px;
+    }
+
+    .projectHeader {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .yreLogo {
+      height: 44px;
+      width: auto;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .schoolNewsLogo {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      object-fit: cover;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .headerInfo {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .headerInfo h3 {
+      font-size: 19px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .badgeGold {
+      padding: 4px 10px;
+      background-color: #fef3c7;
+      color: #92400e;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 12px;
+    }
+
+    .badgeRank {
+      padding: 4px 10px;
+      background-color: #e0f2fe;
+      color: #0369a1;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 12px;
+    }
+
+    .badgeBlue {
+      padding: 4px 10px;
+      background-color: #dbeafe;
+      color: #1e40af;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 12px;
+    }
+
+    .badgeGreen {
+      padding: 4px 10px;
+      background-color: #dcfce7;
+      color: #166534;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 12px;
+    }
+
+    .badgePurple {
+      padding: 4px 10px;
+      background-color: #f3e8ff;
+      color: #6b21a8;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 12px;
+    }
+
+    .badgeGray {
+      padding: 4px 10px;
+      background-color: #f1f5f9;
+      color: #334155;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 12px;
+    }
+
+    .projectBody {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    /* Responsive 16:9 Video Wrapper */
+    .videoWrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #000000;
+    }
+
+    .videoWrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .projectDescription h4 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 10px;
+    }
+
+    .projectDescription p {
+      font-size: 14.5px;
+      color: #475569;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .projectDescription p:last-child {
+      margin-bottom: 0;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 13px;
+      color: #94a3b8;
+    }
+
+    /* MOBILE STYLES */
+    @media (max-width: 768px) {
+      body {
+        padding: 0 12px 40px 12px;
+      }
+
+      .siteHeader {
+        padding: 24px 0 10px 0;
+      }
+
+      .siteHeader h1 {
+        font-size: 26px;
+        letter-spacing: 1px;
+      }
+      
+      .navMenu {
+        position: sticky;
+        top: 0;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 6px;
+        padding: 10px 4px 14px 4px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #e2e8f0;
+      }
+      
+      .navBtn {
+        flex: 1;
+        padding: 8px 4px;
+        font-size: 11px;
+        font-weight: 600;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .projectCard {
+        padding: 16px;
+      }
+
+      .projectHeader {
+        gap: 12px;
+        margin-bottom: 14px;
+        padding-bottom: 12px;
+      }
+
+      .yreLogo {
+        height: 36px;
+      }
+
+      .schoolNewsLogo {
+        width: 36px;
+        height: 36px;
+      }
+
+      .headerInfo h3 {
+        font-size: 16px;
+      }
+
+      .projectBody {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .projectDescription h4 {
+        font-size: 15px;
+      }
+
+      .projectDescription p {
+        font-size: 13.5px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Formal Academic Header -->
+    <header class="siteHeader">
+      <h1>My Teaching Portfolio</h1>
+    </header>
+
+    <!-- NAVIGATION MENU -->
+    <nav class="navMenu">
+      <a href="index.html" class="navBtn">About Me</a>
+      <a href="school-moments.html" class="navBtn">School Moments</a>
+      <a href="resume.html" class="navBtn">My Resume</a>
+    </nav>
+
+    <!-- Project Card 1: YRE Food Waste Documentary -->
+    <article class="projectCard">
+      <div class="projectHeader">
+        <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/YRE%2Blogo.webp" alt="YRE Logo" class="yreLogo">
+        <div class="headerInfo">
+          <h3>Young Reporters for the Environment</h3>
+          <div class="badges">
+            <span class="badgeGold">1st Place: Video Editing (Local)</span>
+            <span class="badgeRank">4th Place Overall (Local)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="projectBody">
+        <div class="videoWrapper">
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/nrD1udLDqYo" 
+            title="Food Waste in Morocco: A Hidden Environmental Problem" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="projectDescription">
+          <h4>Food Waste Investigation</h4>
+          <p>I am passionate about filmmaking and video editing, so I brought in my own camera gear and equipment to film and edit this project alongside my middle school students.</p>
+          <p>We started by investigating our school canteen. To see if it was a broader issue, we expanded our research across Morocco and interviewed an environmental researcher at Ibn Tofail University. Our work won 1st place locally for video editing and 4th place overall.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project Card 2: US Pen Pal and Cultural Exchange -->
+    <article class="projectCard">
+      <div class="projectHeader">
+        <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/703896748_122096322381343939_4510345508896270415_n.jpg" alt="Profile Icon" class="schoolNewsLogo">
+        <div class="headerInfo">
+          <h3>US Pen Pal and Cultural Exchange</h3>
+          <div class="badges">
+            <span class="badgeBlue">International Exchange</span>
+            <span class="badgeGreen">Real World Communication</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="projectBody">
+        <div class="videoWrapper">
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/OnHKr_Bu_4s" 
+            title="US Pen Pal and Cultural Exchange Mystery Box" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="projectDescription">
+          <h4>International Pen Pal Box Unboxing</h4>
+          <p>To give my students a chance to use English naturally outside textbook lessons, I organized an international pen pal program with partner teachers in New Hampshire, United States. Our classes connected through live video sessions and built real friendships over time.</p>
+          <p>We exchanged cultural mystery packages filled with handwritten letters, postcards, drawings, snacks, and cultural gifts. We received a special gift box from New Hampshire and sent back Moroccan souvenirs, city postcards, and local treats, proving to students that English connects people across the world.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project Card 3: Live International Student Video Call -->
+    <article class="projectCard">
+      <div class="projectHeader">
+        <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/703896748_122096322381343939_4510345508896270415_n.jpg" alt="Profile Icon" class="schoolNewsLogo">
+        <div class="headerInfo">
+          <h3>Live International Student Video Session</h3>
+          <div class="badges">
+            <span class="badgeGreen">Real Communication</span>
+            <span class="badgePurple">Cross Border Learning</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="projectBody">
+        <div class="videoWrapper">
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/Caji4OCVP-4" 
+            title="International Video Call: Students Practicing English Across Borders" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="projectDescription">
+          <h4>Authentic English Speaking Across Borders</h4>
+          <p>In this video, my primary students speak directly with their pen pals from the United States in real time. Seeing their American peers on screen transformed English from a classroom subject into a genuine tool for connection, and for months afterward, it was all the students talked about!</p>
+          <p>This experience made English their favorite subject. It sparked immense enthusiasm as students proactively asked questions to improve their communication skills. Following our initial two week video sessions with partner teachers abroad, we expanded into a year long pen pal project with letters and cultural exchange packages exchanged continuously.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project Card 4: Student School News Broadcast -->
+    <article class="projectCard">
+      <div class="projectHeader">
+        <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/PCPSSchoolNewsRelease800x800.jpg" alt="School News Logo" class="schoolNewsLogo">
+        <div class="headerInfo">
+          <h3>School News Broadcast</h3>
+          <div class="badges">
+            <span class="badgeBlue">School Journalism</span>
+            <span class="badgeGray">Project Based Learning</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="projectBody">
+        <div class="videoWrapper">
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/-F6NT_NMDZU" 
+            title="Arabic Day Celebration at Our School | Special News Report" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="projectDescription">
+          <h4>Student News Report and Arabic Language Day</h4>
+          <p>I led a broadcast journalism activity with my middle school students to create an authentic news program. The students took on distinct roles as news anchors, weather presenters, and roving reporters.</p>
+          <p>The broadcast opened with a local weather update for our city and moved into live field reporting on our school Arabic Language Day event, featuring student interviews, poster exhibits, and play preparations, giving students practical public speaking experience in English.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project Card 5: Free-Time Activities & Confidence Building -->
+    <article class="projectCard">
+      <div class="projectHeader">
+        <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/PCPSSchoolNewsRelease800x800.jpg" alt="School News Logo" class="schoolNewsLogo">
+        <div class="headerInfo">
+          <h3>Student Free Time Activities News Feature</h3>
+          <div class="badges">
+            <span class="badgeGreen">Confidence Building</span>
+            <span class="badgeBlue">School News Video</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="projectBody">
+        <div class="videoWrapper">
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/IgjuhiITzQo" 
+            title="Top FREE Activities at School This Week!" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="projectDescription">
+          <h4>Encouraging Hesitant English Speakers</h4>
+          <p>In this school news video covering student hobbies and free time activities, I intentionally chose to involve students who were previously hesitant or less confident speaking English.</p>
+          <p>Through step by step guidance, encouraging coaching, and structured interview prompts, these students built the confidence to host and speak on camera for our news broadcast. The results were inspiring, as both the students and their parents were extremely proud to see their progress featured on our school news program.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project Card 6: School News Intro Teaser -->
+    <article class="projectCard">
+      <div class="projectHeader">
+        <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/PCPSSchoolNewsRelease800x800.jpg" alt="School News Logo" class="schoolNewsLogo">
+        <div class="headerInfo">
+          <h3>School News Promo Video</h3>
+          <div class="badges">
+            <span class="badgePurple">Student Recruitment</span>
+            <span class="badgeGray">School Reception Loop</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="projectBody">
+        <div class="videoWrapper">
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/2xVtjYV7ZQM" 
+            title="School News Intro 2026 | Professional Broadcast Opening" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="projectDescription">
+          <h4>Building Suspense and Student Participation</h4>
+          <p>I created this promotional intro video with my students as a teaser before launching our official school news series. We set it to play on a continuous loop on the TV screen in our school reception area.</p>
+          <p>Parents and school visitors loved seeing the video when they walked in. The teaser generated a lot of excitement among students, leading to a huge wave of signups from students who wanted to join our news team and practice speaking English on camera.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project Card 7: Houses Around the World Map Project -->
+    <article class="projectCard">
+      <div class="projectHeader">
+        <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/703896748_122096322381343939_4510345508896270415_n.jpg" alt="Profile Icon" class="schoolNewsLogo">
+        <div class="headerInfo">
+          <h3>Houses Around the World Map Project</h3>
+          <div class="badges">
+            <span class="badgeGold">Primary Students</span>
+            <span class="badgeGray">Project Based Learning</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="projectBody">
+        <div class="videoWrapper">
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/O7a5v_2OW9M" 
+            title="Houses Around the World Map Project" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="projectDescription">
+          <h4>Neighbourhood Map and Speaking Activity</h4>
+          <p>After finishing our classroom module about houses around the world, my primary students and I created a hands on map building project. The students worked together to create a map of their own neighbourhood and then presented their work on video.</p>
+          <p>The results of this activity were fantastic. At the end of the project, I found that 80 percent of the students were able to confidently talk about different types of houses around the world and describe their own neighbourhood in English.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project Card 8: Amazigh Day Celebration -->
+    <article class="projectCard">
+      <div class="projectHeader">
+        <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/703896748_122096322381343939_4510345508896270415_n.jpg" alt="Profile Icon" class="schoolNewsLogo">
+        <div class="headerInfo">
+          <h3>Amazigh Day Celebration in Morocco</h3>
+          <div class="badges">
+            <span class="badgePurple">Cultural Heritage</span>
+            <span class="badgeGreen">Student Expression</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="projectBody">
+        <div class="videoWrapper">
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/RJ2Lkusizyc" 
+            title="Amazigh Day at School: Learning, Sharing, and Celebrating Our Roots" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="projectDescription">
+          <h4>Celebrating Cultural Identity and Heritage</h4>
+          <p>As part of a special school event, both my middle school and primary school students came together to celebrate Amazigh Day in Morocco. In this short reel video, students share their thoughts, history, and traditions, expressing their personal pride in their cultural roots.</p>
+          <p>It was a wonderful opportunity for the students to speak on camera, share positive opinions, and celebrate unity together. The event brought everyone closer, creating a joyful space for students to talk and honor their heritage with respect and enthusiasm.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project Card 9: School Trip English Immersion -->
+    <article class="projectCard">
+      <div class="projectHeader">
+        <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/703896748_122096322381343939_4510345508896270415_n.jpg" alt="Profile Icon" class="schoolNewsLogo">
+        <div class="headerInfo">
+          <h3>School Trip English Immersion</h3>
+          <div class="badges">
+            <span class="badgeGreen">English Immersion</span>
+            <span class="badgeBlue">Real World Practice</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="projectBody">
+        <div class="videoWrapper">
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/7eZKVrrMkKo" 
+            title="Unforgettable School Trip Moments" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="projectDescription">
+          <h4>Practicing English Outside the Classroom</h4>
+          <p>On our school trips, the primary aim is to give students a real world environment to practice English. As their teacher, I make it a point to communicate entirely in English during our trips.</p>
+          <p>Even though students sometimes attempt to speak in the local language or Arabic, I always respond in English. They understand completely without any confusion, which encourages them to listen actively and build confidence speaking English.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project Card 10: Robotics and AI Formation Workshop -->
+    <article class="projectCard">
+      <div class="projectHeader">
+        <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/703896748_122096322381343939_4510345508896270415_n.jpg" alt="Profile Icon" class="schoolNewsLogo">
+        <div class="headerInfo">
+          <h3>Robotics and AI Formation Workshop</h3>
+          <div class="badges">
+            <span class="badgeGold">Ministry of Education</span>
+            <span class="badgePurple">Casablanca Barnousi</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="projectBody">
+        <div class="videoWrapper">
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/9uG7_3GoUBc" 
+            title="Robotics Workshop Learning the Basics of Robotics" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="projectDescription">
+          <h4>Guiding Students in AI and Robotics</h4>
+          <p>I accompanied and guided our students during an official robotics and artificial intelligence formation workshop organized by the Ministry of Education in Casablanca Barnousi.</p>
+          <p>Throughout the trip, I helped students understand complex robotics concepts, encouraged them to ask active questions, and supported their full participation in hands on building and programming activities.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project Card 11: Job Day and Guest Pilot Visit -->
+    <article class="projectCard">
+      <div class="projectHeader">
+        <img src="https://raw.githubusercontent.com/boudaryoussef99-bit/google-site-images-and-resureces-/main/703896748_122096322381343939_4510345508896270415_n.jpg" alt="Profile Icon" class="schoolNewsLogo">
+        <div class="headerInfo">
+          <h3>Job Day and Guest Pilot Visit</h3>
+          <div class="badges">
+            <span class="badgeBlue">Job Day Inspiration</span>
+            <span class="badgeGreen">Special Guest Pilot</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="projectBody">
+        <div class="videoWrapper">
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/VHXn0l3rGjk" 
+            title="Students Meet a Pilot" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="projectDescription">
+          <h4>Motivating Students Through Career Inspiration</h4>
+          <p>For our special Job Day event, I invited different professionals to visit our class to motivate students, encourage them to study hard, and inspire them about their future careers.</p>
+          <p>One of our special guest speakers was Badr, an airline pilot flying Airbus aircraft. He shared his aviation journey, answered questions from the students, and showed them that big dreams are achievable through hard work and dedication.</p>
+        </div>
+      </div>
+    </article>
+
+    <footer>
+      <p>&copy; 2026 Youssef Boudar | English Teacher and Educator</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
